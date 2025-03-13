@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Abbey-Gayle Haughton | Website Portfolio">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <title>Shoes Company | KingKicks</title>
+
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Garamond", sans-serif;
+            background-color: #C8C4D2;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        /* Header */
+        .logo img {
+            width: 120px;
+            height: auto;
+        }
+        .meanu-sec {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            background-color: #DAD6f9;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+        .desk-menu ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        .desk-menu ul li a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .desk-menu ul li a:hover {
+            color: #ffffff;
+        } 
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        /* Products Grid */
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product {
+            background: #cbc4d2;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .product p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .btn {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .add-to-cart { background: #838ae5; }
+        .add-to-cart:hover { background: #636e72; }
+        .checkout-btn { background: #838ae5; }
+        .checkout-btn:hover { background: #636e72; }
+        .cancel-btn { background: #636e72; }
+        .cancel-btn:hover { background: #dad6f9; }
+        .exit-btn { background: #838ae5; }
+        .exit-btn:hover { background: #636e72; }
+
+        /* Buttons Container */
+        .buttons-container {
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px 0; 
+            background-color: #DAD6f9;
+        }
+        .f-title h5 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .copyright {
+            background-color: #DAD6f9;
+            text-align: center;
+            padding: 5px 0; 
+            font-size: 18px; 
+        }
+
+        .copyright p {
+            color: #333;
+            margin: 0;
+            font-size: 19px; 
+        } 
+        .social-icons li {
+            display: inline-block;
+            margin: 0 8px;
+            font-size: 14px; 
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="meanu-sec">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Logo">
+            </div>
+            <nav class="desk-menu">
+                <ul>
+                    <li><a href="../Codes/About.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+                    <li><a href="../Codes/Product.html"><i class="fas fa-cart-shopping"></i>Products</a></li>
+                    <li><a href="../Codes/Invoice.html"><i class="fas fa-file-invoice"></i>Invoice</a></li>
+                    <li><a href="../Codes/Login.html"><i class="fas fa-sign-in-alt"></i>Sign Up</a></li>
+                    <li><a href="../Codes/Contact.html"><i class="fas fa-envelope"></i>Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Our Products</h2>
+        <div class="products-container">
+            <div class="product" id="product1">
+                <img src="../images/AIRFORCE1.png" alt="Product 1">
+                <p>AIR FORCE 1s - $150</p>
+                <button class="btn add-to-cart" onclick="addToCart(1, 150)">Add to Cart</button>
+            </div>
+            <div class="product" id="product2">
+                <img src="../images/AIRFORCE1LOWSP.png" alt="Product 2">
+                <p>NOCTA Air Force 1 Low - $170</p>
+                <button class="btn add-to-cart" onclick="addToCart(2, 170)">Add to Cart</button>
+            </div>
+            <div class="product" id="product3">
+                <img src="../images/AIRFORCE107LV8.png" alt="Product 3">
+                <p>Nike Air Force 1'07 LV8 - $180</p>
+                <button class="btn add-to-cart" onclick="addToCart(3, 180)">Add to Cart</button>
+            </div>
+            <div class="product" id="product4">
+                <img src="../images/NIKEAAF88SP.png" alt="Product 4">
+                <p>Nike Air Alpha Force 88 x Billie - $170</p>
+                <button class="btn add-to-cart" onclick="addToCart(4, 170)">Add to Cart</button>
+            </div>
+            <div class="product" id="product4">
+                <img src="../images/AIRJORDAN1HIGHG.png" alt="Product 5">
+                <p>Air Jordan 1 Hgh G - $100</p>
+                <button class="btn add-to-cart" onclick="addToCart(5, 100)">Add to Cart</button>
+            </div>
+            <div class="product" id="product4">
+                <img src="../images/AIRJORDAN1MIDSE.png" alt="Product 6">
+                <p>Air Jordan 1 Mid SE - $140</p>
+                <button class="btn add-to-cart" onclick="addToCart(6, 140)">Add to Cart</button>
+            </div>
+            <div class="product" id="product5">
+                <img src="../images/AIRJORDAN3RETRO.png" alt="Product 7">
+                <p>Air Jordan 3 Retro "Lucky Shorts" - $220</p>
+                <button class="btn add-to-cart" onclick="addToCart(7, 220)">Add to Cart</button>
+            </div>
+            <div class="product" id="product6">
+                <img src="../images/AIRJORDAN9RETRO.png" alt="Product 8">
+                <p>Air Jordan 9 Retro "Cool Grey" - $250</p>
+                <button class="btn add-to-cart" onclick="addToCart(8, 250)">Add to Cart</button>
+            </div>
+            <div class="product" id="product8">
+                <img src="../images/AIRZOOMSTRUCTURE25WIDE.png" alt="Product 9">
+                <p>Nike Structure 25 - $100</p>
+                <button class="btn add-to-cart" onclick="addToCart(9, 100)">Add to Cart</button>
+            </div>
+            <div class="product" id="product9">
+                <img src="../images/AIRMAXNUAXISWTR.png" alt="Product 10">
+                <p>Nike Air Max Nuaxis - $60</p>
+                <button class="btn add-to-cart" onclick="addToCart(10, 60)">Add to Cart</button>
+            </div>
+            <div class="product" id="product8">
+                <img src="../images/AIRMAXDNES.png" alt="Product 11">
+                <p>Nike Air Max Dn Essential - $170</p>
+                <button class="btn add-to-cart" onclick="addToCart(11, 170)">Add to Cart</button>
+            </div>
+            <div class="product" id="product9">
+                <img src="../images/NIKEAIRMAXEXCEE.png" alt="Product 12">
+                <p>Nike Air Max 90 Premium - $90</p>
+                <button class="btn add-to-cart" onclick="addToCart(12, 90)">Add to Cart</button>
+            </div>
+            <div class="product" id="product8">
+                <img src="../images/NIKEDUNKHIRETROSE.png" alt="Product 13">
+                <p>Nike Dunk High Retro SE - $150</p>
+                <button class="btn add-to-cart" onclick="addToCart(13, 150)">Add to Cart</button>
+            </div>
+            <div class="product" id="product9">
+                <img src="../images/NIKEDUNKLOWRETRO.png" alt="Product 14">
+                <p>Nike Dunk Low - $120</p>
+                <button class="btn add-to-cart" onclick="addToCart(14, 120)">Add to Cart</button>
+            </div>
+            <div class="product" id="product8">
+                <img src="../images/AIRJORDAN1.jpeg" alt="Product 15">
+                <p>Nike Air Jordan 1s - $140</p>
+                <button class="btn add-to-cart" onclick="addToCart(15, 140)">Add to Cart</button>
+            </div>
+            <div class="product" id="product9">
+                <img src="../images/NIKEDUNKLOWRETROSE.png" alt="Product 16">
+                <p>Nike Dunk Low Retro SE - $90</p>
+                <button class="btn add-to-cart" onclick="addToCart(16, 90)">Add to Cart</button>
+            </div>
+            <div class="product" id="product8">
+                <img src="../images/NIKESBZOOMBLAZERMID.png" alt="Product 17">
+                <p>Nike SB Zoom Blazer Mid - $60</p>
+                <button class="btn add-to-cart" onclick="addToCart(17, 60)">Add to Cart</button>
+            </div>
+            <div class="product" id="product9">
+                <img src="../images/NIKECORTEZ.png" alt="Product 18">
+                <p>Nike Cortez Textile - $100</p>
+                <button class="btn add-to-cart" onclick="addToCart(18, 100)">Add to Cart</button>
+            </div>
+            <div class="product" id="product9">
+                <img src="../images/NIKEC1TY.png" alt="Product 19">
+                <p>Nike C1ty - $90</p>
+                <button class="btn add-to-cart" onclick="addToCart(19, 90)">Add to Cart</button>
+            </div>
+            <div class="product" id="product9">
+                <img src="../images/BLAZER.png" alt="Product 20">
+                <p>Nike Blazer Mid'77 Vintage - $70</p>
+                <button class="btn add-to-cart" onclick="addToCart(20, 70)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Buttons Container -->
+        <div class="buttons-container">
+            <button class="btn checkout-btn" onclick="checkout()">CheckOut</button>
+            <button class="btn cancel-btn" onclick="cancelOrder()">Cancel</button>
+            <button class="btn exit-btn" onclick="exitPage()">Exit</button>
+        </div>
+    </div>
+
+    <script>
+        // Global Arrays to Track Products and Cart
+        const products = [
+            { id: 1, name: "AIR FORCE 1s", price: 150, quantity: 10 },
+            { id: 2, name: "NOCTA Air Force 1 Low", price: 170, quantity: 10 },
+            { id: 3, name: "Nike Air Force 1'07 LV8", price: 180, quantity: 10 },
+            { id: 4, name: "Nike Air Alpha Force 88 x Billie", price: 170, quantity: 10 },
+            { id: 5, name: "Air Jordan 1 Hgh G", price: 100, quantity: 10 },
+            { id: 6, name: "Air Jordan 1 Mid SE", price: 140, quantity: 10 },
+            { id: 7, name: "Air Jordan 3 Retro Lucky Shorts", price: 220, quantity: 10 },
+            { id: 8, name: "Air Jordan 9 Retro Cool Grey", price: 250, quantity: 10 },
+            { id: 9, name: "Nike Structure 25", price: 100, quantity: 10 },
+            { id: 10, name: "Nike Air Max Nuaxis", price: 60, quantity: 10 },
+            { id: 11, name: "Nike Air Max Dn Essential", price: 170, quantity: 10 },
+            { id: 12, name: "Nike Air Max 90 Premium", price: 90, quantity: 10 },
+            { id: 13, name: "Nike Dunk High Retro SE", price: 150, quantity: 10 },
+            { id: 14, name: "Nike Dunk Low", price: 120, quantity: 10 },
+            { id: 15, name: "Nike Air Jordan 1s", price: 140, quantity: 10 },
+            { id: 16, name: "Nike Dunk Low Retro SE", price: 90, quantity: 10 },
+            { id: 17, name: "Nike SB Zoom Blazer Mid", price: 60, quantity: 10 },
+            { id: 18, name: "Nike Cortez Textile", price: 100, quantity: 10 },
+            { id: 19, name: "Nike C1ty", price: 90, quantity: 10 },
+            { id: 20, name: "Nike Blazer Mid'77 Vintage", price: 70, quantity: 10 },
+        ];
+
+        let cart = [];
+
+        // Function to Add Product to Cart
+        function addToCart(productId, price) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                product.quantity += 1; // Increment quantity
+                cart.push({ ...product }); // Add to cart
+                alert(`${product.name} added to cart!`);
+            }
+        }
+
+        // Function to Calculate Charges
+        function calculateCharges() {
+            const subtotal = cart.reduce((sum, item) => sum + price * quantity, 0);
+            const taxRate = 0.15; // 15% tax
+            const tax = subtotal * taxRate;
+            const discount = subtotal > 500 ? 50 : 0; // $50 discount if subtotal > $500
+            const total = subtotal + tax - discount;
+
+            return { subtotal, tax, discount, total };
+        }
+
+        // Function to Generate Invoice
+        function checkout() {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+
+            const charges = calculateCharges();
+            const invoiceData = {
+                cart: cart,
+                subtotal: charges.subtotal,
+                tax: charges.tax,
+                discount: charges.discount,
+                total: charges.total,
+            };
+
+            // Store invoice data in localStorage
+            localStorage.setItem("invoiceData", JSON.stringify(invoiceData));
+
+            // Redirect to invoice page
+            window.location.href = "invoice.html";
+        }
+
+        // Function to Cancel Order
+        function cancelOrder() {
+            cart = [];
+            products.forEach(p => p.quantity = 0); // Reset quantities
+            alert("Order canceled.");
+        }
+
+        // Function to Exit Page
+        function exitPage() {
+            window.location.href = "home.html";
+        }
+    </script>
+
+    <!-- footer Section -->
+    <footer class="footer bg-color">
+        <section class="copyright">
+                <div class="d-flex justify-content-between align-items-center">
+                    <p>copyright @ 2025 Abbey-Gayle Haughton. All right reserved</p>
+                        <ul class="social-icons">
+                            <!-- icons working slow  -->
+                            <li><a href=""><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                            <li><a href=""><i class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a href=""><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href=""><i class="fab fa-linkedin-in"></i> Linked In</a></li>
+                        </ul>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+    
+
+</body>
+</html>
