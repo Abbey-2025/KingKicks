@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Abbey-Gayle Haughton | Website Portfolio">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <title>Shoes Company | KingKicks</title>
+
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Garamond", sans-serif;
+            background-color: #C8C4D2;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        /* Header */
+        .logo img {
+            width: 120px;
+            height: auto;
+        }
+        .meanu-sec {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            background-color: #DAD6f9;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+        .desk-menu ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        .desk-menu ul li a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .desk-menu ul li a:hover {
+            color: #ffffff;
+        } 
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        /* Products Grid */
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product {
+            background: #cbc4d2;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .product p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .btn {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: black;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .add-to-cart { background: #838ae5; }
+        .add-to-cart:hover { background: #636e72; }
+        .checkout-btn { background: #838ae5; }
+        .checkout-btn:hover { background: #636e72; }
+        .cancel-btn { background: #636e72; }
+        .cancel-btn:hover { background: #dad6f9; }
+        .exit-btn { background: #838ae5; }
+        .exit-btn:hover { background: #636e72; }
+
+        /* Buttons Container */
+        .buttons-container {
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px 0; 
+            background-color: #DAD6f9;
+        }
+        .f-title h5 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .copyright {
+            background-color: #DAD6f9;
+            text-align: center;
+            padding: 5px 0; 
+            font-size: 18px; 
+        }
+
+        .copyright p {
+            color: #333;
+            margin: 0;
+            font-size: 19px; 
+        } 
+        .social-icons li {
+            display: inline-block;
+            margin: 0 8px;
+            font-size: 14px; 
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="meanu-sec">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Logo">
+            </div>
+            <nav class="desk-menu">
+                <ul>
+                    <li><a href="../Codes/Home.html"><i class="fas fa-bag-shopping"></i>Home</a></li>
+                    <li><a href="../Codes/Product.html"><i class="fas fa-cart-shopping"></i>Products</a></li>
+                    <li><a href="../Codes/Cart.html"><i class="fas fa-bag-shopping"></i>Cart</a></li>
+                    <li><a href="../Codes/Invoice.html"><i class="fas fa-file-invoice"></i>Invoice</a></li>
+                    <li><a href="../Codes/Login.html"><i class="fas fa-sign-in-alt"></i>Sign Up</a></li>
+                    <li><a href="../Codes/About.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Our Products</h2>
+        <div class="products-container">
+            <!-- Product Items -->
+            <div class="product" id="product1">
+                <img src="../images/AIRFORCE1.png" alt="Product 1">
+                <h3>AIR FORCE 1s</h3>
+                <p>$150</p>
+                <label for="size-Airforce1">Size:</label>
+                <select class="shoe-size" id="size-Airforce1">
+                    <option value="7">US 7</option>
+                    <option value="8">US 8</option>
+                    <option value="9">US 9</option>
+                    <option value="10">US 10</option>
+                    <option value="11">US 11</option>
+                </select>    
+                <button class="btn add-to-cart" onclick="addToCart(1, 150, 'AIR FORCE 1s', '../images/AIRFORCE1.png', 'size-Airforce1')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product2">
+                <img src="../images/AIRFORCE1LOWSP.png" alt="Product 2">
+                <h3>NOCTA Air Force 1 Low</h3>
+                <p>$170</p>
+        <label for="size-Airforce1">Size:</label>
+           <select class="shoe-size" id="size-Airforce1lowsp">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>     
+                <button class="btn add-to-cart" onclick="addToCart(2, 170, 'AIR FORCE 1s Low', '../images/AIRFORCE1LOWSP.png', 'size-Airforce1low')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product3">
+                <img src="../images/AIRFORCE107LV8.png" alt="Product 3">
+                <h3>Nike Air Force 1'07 LV8</h3>
+                <p>$180</p>
+        <label for="size-Airforce2">Size:</label>
+            <select class="shoe-size" id="size-Airforce1lowsp">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>    
+                <button class="btn add-to-cart" onclick="addToCart(3, 180, 'Nike Air Force 1-07 LV8', '../images/AIRFORCE107LV8.png', 'size-Airforce2')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product4">
+                <img src="../images/NIKEAAF88SP.png" alt="Product 4">
+                <h3>Nike Air Alpha Force 88 x Billie</h3> 
+                <p>$170</p>
+        <label for="size-NIKE">Size:</label>
+            <select class="shoe-size" id="size-NIKE">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select> 
+                <button class="btn add-to-cart" onclick="addToCart(4, 170, 'Nike Air Alpha Force 88 x Billie', '../images/NIKEAAF88SP.png', 'size-NIKE')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product4">
+                <img src="../images/AIRJORDAN1HIGHG.png" alt="Product 5">
+                <h3>Air Jordan 1 Hgh G</h3>
+                <P>$100</p>
+        <label for="size-Airjordan1">Size:</label>
+            <select class="shoe-size" id="size-Airjordan1">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select> 
+                <button class="btn add-to-cart" onclick="addToCart(5, 100, 'Air Jordan 1 Hgh G', '../images/AIRJORDAN1HIGHG.png', 'size-Airjordan1')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product4">
+                <img src="../images/AIRJORDAN1MIDSE.png" alt="Product 6">
+                <h3>Air Jordan 1 Mid SE</h3> 
+                <p>$140</p>
+        <label for="size-Airjordan1mid">Size:</label>
+            <select class="shoe-size" id="size-Airjordan1mid">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>        
+                <button class="btn add-to-cart" onclick="addToCart(6, 140, 'Air Jordan 1 Mid SE', '../images/AIRJORDAN1MIDSE.png', 'size-Airjordan1mid')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product5">
+                <img src="../images/AIRJORDAN3RETRO.png" alt="Product 7">
+                <h3>Air Jordan 3 Retro "Lucky Shorts"<h3>
+                <p>$220</p>
+        <label for="size-Airjordan3">Size:</label>
+            <select class="shoe-size" id="size-Airjordan3">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>
+                <button class="btn add-to-cart" onclick="addToCart(7, 220, 'Air Jordan 3 Retro 22  - Lucky Shorts', '../images/AIRJORDAN3RETRO.png', 'size-size-Airjordan3')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product6">
+                <img src="../images/AIRJORDAN9RETRO.png" alt="Product 8">
+                <h3>Air Jordan 9 Retro "Cool Grey"</h3>
+                <p>$250</p>
+        <label for="size-Airjordan9">Size:</label>
+            <select class="shoe-size" id="size-Airjordan9">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>
+                <button class="btn add-to-cart" onclick="addToCart(8, 250, 'Air Jordan 9 Retro - Cool Grey', '../images/AIRJORDAN9RETRO.png', 'size-Airjordan9')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product8">
+                <img src="../images/AIRZOOMSTRUCTURE25WIDE.png" alt="Product 9">
+                <h3>Nike Structure 25</h3>
+                <p>$100</p>
+        <label for="size-airzoom">Size:</label>
+            <select class="shoe-size" id="size-airzoom">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>
+                <button class="btn add-to-cart" onclick="addToCart(9, 100, 'Nike Structure 25', '../images/AIRZOOMSTRUCTURE25WIDE.png', 'size-airzoom')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product9">
+                <img src="../images/AIRMAXNUAXISWTR.png" alt="Product 10">
+                <h3>Nike Air Max Nuaxis<h3>
+                <p>$60</p>
+        <label for="size-Airmax">Size:</label>
+            <select class="shoe-size" id="size-Airmax">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>
+                <button class="btn add-to-cart" onclick="addToCart(10, 60, 'Nike Air Max Nuaxis', '../images/AIRMAXNUAXISWTR.png', 'size-Airmax')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product8">
+                <img src="../images/AIRMAXDNES.png" alt="Product 11">
+                <h3>Nike Air Max Dn Essential</h3>
+                <p>$170</p>
+        <label for="size-Airmaxdn">Size:</label>
+            <select class="shoe-size" id="size-Airmaxdn">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>
+                <button class="btn add-to-cart" onclick="addToCart(11, 170, 'Nike Air Max Dn Essential', '../images/AIRMAXDNES.png', 'size-Airmaxdn')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product9">
+                <img src="../images/NIKEAIRMAXEXCEE.png" alt="Product 12">
+                <h3>Nike Air Max 90 Premium</h3>
+                <p>$90</p>
+        <label for="size-nikeair">Size:</label>
+            <select class="shoe-size" id="size-nikeair">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>
+                <button class="btn add-to-cart" onclick="addToCart(12, 90, 'Nike Air Max 90 Premium', '../images/NIKEAIRMAXEXCEE.png', 'size-nikeair')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product8">
+                <img src="../images/NIKEDUNKHIRETROSE.png" alt="Product 13">
+                <h3>Nike Dunk High Retro SE</h3>
+                <p>$150</p>
+        <label for="size-nikedunk">Size:</label>
+            <select class="shoe-size" id="size-nikedunk">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>
+                <button class="btn add-to-cart" onclick="addToCart(13, 150, 'Nike Dunk High Retro SE', '../images/NIKEDUNKHIRETROSE.png', 'size-nikedunk')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product9">
+                <img src="../images/NIKEDUNKLOWRETRO.png" alt="Product 14">
+                <h3>Nike Dunk Low</h3>
+                <p>$120</p>
+        <label for="size-nikedunklow">Size:</label>
+            <select class="shoe-size" id="size-nikedunklow">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>
+                <button class="btn add-to-cart" onclick="addToCart(14, 120, 'Nike Dunk Low', '../images/NIKEDUNKLOWRETRO.png', 'size-nikedunklow')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product8">
+                <img src="../images/AIRJORDAN1.jpeg" alt="Product 15">
+                <h3>Nike Air Jordan 1s</h3>
+                <p>$140</p>
+        <label for="size-Airjordan2">Size:</label>
+            <select class="shoe-size" id="size-Airjordan2">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>
+                <button class="btn add-to-cart" onclick="addToCart(15, 140, 'Nike Air Jordan 1s', '../images/AIRJORDAN1.jpeg', 'size-Airjordan2')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product9">
+                <img src="../images/NIKEDUNKLOWRETROSE.png" alt="Product 16">
+                <h3>Nike Dunk Low Retro SE</h3>
+                <p>$90</p>
+        <label for="size-nikedunklowretro">Size:</label>
+            <select class="shoe-size" id="size-nikedunklowretro">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>
+                <button class="btn add-to-cart" onclick="addToCart(16, 90, 'Nike Dunk Low Retro SE', '../images/NIKEDUNKLOWRETROSE.png', 'size-nikedunklowretro')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product8">
+                <img src="../images/NIKESBZOOMBLAZERMID.png" alt="Product 17">
+                <h3>Nike SB Zoom Blazer Mid</h3>
+                <p>$60</p>
+        <label for="size-Nikesb">Size:</label>
+            <select class="shoe-size" id="size-nikesb">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>
+                <button class="btn add-to-cart" onclick="addToCart(17, 60, 'Nike SB Zoom Blazer Mid', '../images/NIKESBZOOMBLAZERMID.png', 'size-Nikesb')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product9">
+                <img src="../images/NIKECORTEZ.png" alt="Product 18">
+                <h3>Nike Cortez Textile</h3>
+                <p>$100</p>
+        <label for="size-nikecortez">Size:</label>
+            <select class="shoe-size" id="size-nikecortez">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>
+                <button class="btn add-to-cart" onclick="addToCart(18, 100, 'Nike Cortez Textile', '../images/NIKECORTEZ.png', 'size-nikecortez')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product9">
+                <img src="../images/NIKEC1TY.png" alt="Product 19">
+                <h3>Nike C1ty</h3>
+                <p>$90</p>
+        <label for="size-nikecity">Size:</label>
+            <select class="shoe-size" id="size-nikecity">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>
+                <button class="btn add-to-cart" onclick="addToCart(19, 90, 'Nike City', '../images/NIKECITY.png', 'size-nikecity')">Add to Cart</button>
+            </div>
+
+            <div class="product" id="product9">
+                <img src="../images/BLAZER.png" alt="Product 20">
+                <h3>Nike Blazer Mid'77 Vintage</h3>
+                <p>$70</p>
+        <label for="size-blazer">Size:</label>
+            <select class="shoe-size" id="size-blazer">
+                <option value="7">US 7</option>
+                <option value="8">US 8</option>
+                <option value="9">US 9</option>
+                <option value="10">US 10</option>
+                <option value="11">US 11</option>
+            </select>
+                <button class="btn add-to-cart" onclick="addToCart(20, 70, 'Nike Blazer Mid 77 Vintage', '../images/BLAZER.png', 'size-size-blazzer')">Add to Cart</button>
+            </div>
+        </div>
+   </div>
+
+        <!-- Buttons Container -->
+        <div class="buttons-container">
+            <button class="btn checkout-btn" onclick="window.location.href='Cart.html'">Cart</button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize cart from localStorage if it exists
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Function to show notification
+        function showNotification() {
+            const notification = document.getElementById("notification");
+            notification.style.display = "block";
+            setTimeout(() => {
+                notification.style.display = "none";
+            }, 3000); // Hide after 3 seconds
+        }
+
+        // Function to add product to cart
+        function addToCart(productId, price, productName, productImage, sizeId) {
+            const size = document.getElementById(sizeId).value;
+            const product = {
+                id: productId,
+                name: productName,
+                price: `$${price}`,
+                image: productImage,
+                size: size
+            };
+            cart.push(product);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            showNotification(); // Show notification
+            updateCartCount(); // Update cart count
+        }
+
+        // Function to update cart count in the header
+        function updateCartCount() {
+            const cartCount = document.getElementById("cart-count");
+            if (cartCount) {
+                cartCount.textContent = cart.length;
+            }
+        }
+
+        // Update cart count on page load
+        updateCartCount();
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-color">
+        <section class="copyright">
+            <div class="d-flex justify-content-between align-items-center">
+                <p>copyright @ 2025 Abbey-Gayle Haughton. All right reserved</p>
+                <ul class="social-icons">
+                    <li><a href=""><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href=""><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href=""><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href=""><i class="fab fa-linkedin-in"></i> Linked In</a></li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>
